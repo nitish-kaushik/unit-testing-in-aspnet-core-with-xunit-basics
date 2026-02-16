@@ -7,7 +7,6 @@ public class MathHelperTests
     private readonly MathHelper _mathHelper = new();
 
     [Fact]
-    [Trait("Category", "Addition")]
     public void Add_WithTwoPositiveNumbers_ReturnsCorrectSum()
     {
         // Arrange
@@ -22,7 +21,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "Addition")]
     public void Add_WithNegativeNumbers_ReturnsCorrectSum()
     {
         // Arrange
@@ -37,8 +35,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "Addition")]
-    [Trait("Edge", "Zero")]
     public void Add_WithZeroValues_ReturnsCorrectSum()
     {
         // Arrange
@@ -57,7 +53,6 @@ public class MathHelperTests
     [InlineData(-5, 5, 0)]
     [InlineData(100, 200, 300)]
     [InlineData(-100, -200, -300)]
-    [Trait("Category", "Addition")]
     public void Add_WithVariousInputs_ReturnsCorrectSum(int a, int b, int expected)
     {
         // Act
@@ -74,7 +69,6 @@ public class MathHelperTests
     [InlineData(0, 5, -5)]
     [InlineData(-5, -3, -2)]
     [InlineData(100, 50, 50)]
-    [Trait("Category", "Subtraction")]
     public void Subtract_WithVariousInputs_ReturnsCorrectDifference(int a, int b, int expected)
     {
         // Act
@@ -85,7 +79,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "Subtraction")]
     public void Subtract_SameNumbers_ReturnsZero()
     {
         // Arrange
@@ -106,7 +99,6 @@ public class MathHelperTests
     [InlineData(-5, 3, -15)]
     [InlineData(-5, -3, 15)]
     [InlineData(7, 7, 49)]
-    [Trait("Category", "Multiplication")]
     public void Multiply_WithVariousInputs_ReturnsCorrectProduct(int a, int b, int expected)
     {
         // Act
@@ -117,7 +109,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "Multiplication")]
     public void Multiply_ByOne_ReturnsSameNumber()
     {
         // Arrange
@@ -133,7 +124,6 @@ public class MathHelperTests
 
 
     [Fact]
-    [Trait("Category", "Division")]
     public void Divide_WithValidDivisor_ReturnsCorrectQuotient()
     {
         // Arrange
@@ -148,7 +138,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "Division")]
     public void Divide_WithZeroDivisor_ThrowsDivideByZeroException()
     {
         // Arrange
@@ -166,7 +155,6 @@ public class MathHelperTests
     [InlineData(-10, 2, -5.0)]
     [InlineData(20, 4, 5.0)]
     [InlineData(9, 3, 3.0)]
-    [Trait("Category", "Division")]
     public void Divide_WithVariousInputs_ReturnsCorrectDecimalQuotient(int a, int b, double expected)
     {
         // Act
@@ -177,7 +165,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "Division")]
     public void Divide_NegativeByPositive_ReturnsNegativeQuotient()
     {
         // Arrange
@@ -197,7 +184,6 @@ public class MathHelperTests
     [InlineData(4, true)]
     [InlineData(0, true)]
     [InlineData(101, false)]
-    [Trait("Category", "EvenOdd")]
     public void IsEven_WithVariousNumbers_ReturnsCorrectResult(int number, bool expected)
     {
         // Act
@@ -208,7 +194,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "EvenOdd")]
     public void IsEven_WithLargeEvenNumber_ReturnsTrue()
     {
         // Arrange
@@ -226,7 +211,6 @@ public class MathHelperTests
     [InlineData(3, 5, 5)]
     [InlineData(0, -10, 0)]
     [InlineData(100, 99, 100)]
-    [Trait("Category", "Comparison")]
     public void Max_WithVariousInputs_ReturnsMaximumValue(int a, int b, int expected)
     {
         // Act
@@ -237,7 +221,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "Comparison")]
     public void Max_WithBothNegativeNumbers_ReturnsLesserNegative()
     {
         // Arrange
@@ -252,7 +235,6 @@ public class MathHelperTests
     }
 
     [Fact]
-    [Trait("Category", "Comparison")]
     public void Max_WithZeroAndPositive_ReturnsPositive()
     {
         // Arrange
