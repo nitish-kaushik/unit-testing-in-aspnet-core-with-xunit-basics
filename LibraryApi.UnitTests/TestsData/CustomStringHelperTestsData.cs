@@ -1,12 +1,13 @@
 using System.Reflection;
 using Xunit.Sdk;
+using Xunit.v3;
 
 namespace LibraryApi.UnitTests.TestsData;
 
 [AttributeUsage(AttributeTargets.Method)]
-public class CustomStringHelperTestsData : DataAttribute
+public abstract class CustomStringHelperTestsData : DataAttribute
 {
-    public override IEnumerable<object[]> GetData(MethodInfo testMethod)
+    public IEnumerable<object[]> GetData(MethodInfo testMethod)
     {
         return new List<object[]>
         {

@@ -2,12 +2,13 @@ using LibraryApi.Helpers;
 
 namespace LibraryApi.UnitTests.Helpers;
 
-public class MathHelperTests
+public class MathHelperTests(ITestOutputHelper outputHelper)
 {
     private readonly MathHelper _mathHelper = new();
 
     [Fact]
     [Trait("category", "addition")]
+    [Trait("bug", "abc-123")]
     public void Add_WithTwoPositiveNumbers_ReturnsCorrectSum()
     {
         // Arrange
@@ -16,8 +17,9 @@ public class MathHelperTests
 
         // Act
         var result = _mathHelper.Add(a, b);
-
+        outputHelper.WriteLine("Adding {0} and {1} gives {2}", a, b, result);
         // Assert
+        Assert.True(result > 0);
         Assert.Equal(15, result);
     }
 
@@ -31,6 +33,7 @@ public class MathHelperTests
 
         // Act
         var result = _mathHelper.Add(a, b);
+        outputHelper.WriteLine("Adding {0} and {1} gives {2}", a, b, result);
 
         // Assert
         Assert.Equal(-15, result);

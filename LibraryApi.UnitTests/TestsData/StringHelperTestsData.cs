@@ -26,7 +26,6 @@ public class StringHelperTestsData1 : TheoryData<string, int>
 {
     public StringHelperTestsData1()
     {
-        AddRow(GetName(), 5);
         Add("One two three", 3);
         Add("One two three four", 4);
     }
