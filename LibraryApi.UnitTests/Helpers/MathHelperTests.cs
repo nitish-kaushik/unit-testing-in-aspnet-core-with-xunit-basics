@@ -254,4 +254,27 @@ public class MathHelperTests(ITestOutputHelper outputHelper)
         // Assert
         Assert.Equal(5, result);
     }
+
+    [Fact]
+    public void Add_WithNullValues_ThrowsArgumentNullException()
+    {
+        // Arrange
+        int? a = null;
+        int? b = null;
+
+        Assert.Throws<ArgumentNullException>(() => _mathHelper.Add(a, b));
+        // Act & Assert
+    }
+
+    [Fact]
+    public void Add_WithZeroValues_ThrowsArgumentException()
+    {
+        // Arrange
+        int? a = 0;
+        int? b = 0;
+
+        var result = Assert.Throws<ArgumentException>(() => _mathHelper.Add(a, b));
+        Assert.Equal("Data is zero", result.Message);
+        // Act & Assert
+    }
 }
