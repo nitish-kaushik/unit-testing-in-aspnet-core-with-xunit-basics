@@ -8,7 +8,7 @@ public static class DbInitializer
     public static void Initialize(LibraryDbContext context)
     {
         // Ensure the database is created
-        context.Database.EnsureCreated();
+        //context.Database.EnsureCreated();
 
         // Check if we already have data
         if (context.Books.Any())
