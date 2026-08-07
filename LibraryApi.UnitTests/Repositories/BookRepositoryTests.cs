@@ -4,16 +4,14 @@ using LibraryApi.UnitTests.Fixtures;
 
 namespace LibraryApi.UnitTests.Repositories;
 
-//[Collection("LibraryDbContextCollection")]
-public class BookRepositoryTests : IClassFixture<LibraryDbContextFixture>
+[Collection("LibraryDbContextCollection")]
+public class BookRepositoryTests
 {
-    private readonly LibraryDbContext _dbContext;
     private readonly IBookRepository _bookRepository;
 
     public BookRepositoryTests(LibraryDbContextFixture fixture)
     {
-        _dbContext = fixture.DbContext;
-        _bookRepository = new BookRepository(_dbContext);
+        _bookRepository = new BookRepository(fixture.DbContext);
     }
 
     [Fact]

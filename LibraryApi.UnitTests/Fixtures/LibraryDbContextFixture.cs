@@ -11,7 +11,7 @@ public class LibraryDbContextFixture : IAsyncLifetime
     public async ValueTask InitializeAsync()
     {
         var options = new DbContextOptionsBuilder<LibraryDbContext>()
-            .UseInMemoryDatabase("TestLibraryDb")
+            .UseInMemoryDatabase($"TestLibraryDb_{Guid.NewGuid()}")
             .Options;
 
         DbContext = new LibraryDbContext(options);
