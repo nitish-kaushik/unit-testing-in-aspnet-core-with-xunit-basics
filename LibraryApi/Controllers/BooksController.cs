@@ -15,6 +15,20 @@ public class BooksController(IBookRepository bookRepository) : ControllerBase
         return Ok(books);
     }
 
+    [HttpGet]
+    public async Task<IActionResult> GetAllBooks2()
+    {
+        var books = await bookRepository.GetAllBooksAsync();
+        return Ok(books);
+    }
+
+    [HttpGet]
+    public async Task<IEnumerable<Book>> GetAllBooks3()
+    {
+        var books = await bookRepository.GetAllBooksAsync();
+        return books;
+    }
+
     [HttpGet("{id:int}")]
     public async Task<ActionResult<Book>> GetBook(int id)
     {
